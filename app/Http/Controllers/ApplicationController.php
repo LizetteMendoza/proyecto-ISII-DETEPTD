@@ -25,7 +25,7 @@ class ApplicationController extends Controller
      */
     public function create()
     {
-        //
+        return view('applications.formularioSolicitud');
     }
 
     /**
@@ -36,7 +36,38 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request-> validate([
+            'nombre'=>'required',
+            'curp' => 'required',
+            'direccion' => 'required',
+            'imf' => 'required',
+            'edad' => 'required',
+            'telefono' => 'required',
+            'sexo' => 'required',
+            'limitacion' => 'required',
+            'escolaridad'=> 'required',
+            'plantel'=> 'required',
+            'etnia' => 'required'
+        ]);
+
+        $solicitud = new Application(); //Se crea un objeto del modelo Application para poder guardaro en él
+        $solicitud->nombre = $request->nombre;
+        $solicitud->curp = $request->curp;
+        $solicitud->direccion = $request->direccion;
+        $solicitud->imf = $request->imf;
+        $solicitud->edad = $request->edad;
+        $solicitud->telefono = $request->telefono;
+        $solicitud->sexo = $request->sexo;
+        $solicitud->limitacion = $request->limitacion;
+        $solicitud->escolaridad = $request->escolaridad;
+        $solicitud->plantel = $request->plantel;
+        $solicitud->etnia = $request->etnia;
+
+        $solicitud->save();
+
+        return redirect('/application'); //Ruta a la que te envía una vez que se guardan los datos, en este caso es el index
+
+        //$solicitud//Aquí se validan los datos y se guardan
     }
 
     /**
@@ -58,7 +89,7 @@ class ApplicationController extends Controller
      */
     public function edit(Application $application)
     {
-        //
+        return view('applications.formularioSolicitud', compact('application'));
     }
 
     /**
@@ -70,7 +101,35 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, Application $application)
     {
-        //
+        $request-> validate([
+            'nombre'=>'required',
+            'curp' => 'required',
+            'direccion' => 'required',
+            'imf' => 'required',
+            'edad' => 'required',
+            'telefono' => 'required',
+            'sexo' => 'required',
+            'limitacion' => 'required',
+            'escolaridad'=> 'required',
+            'plantel'=> 'required',
+            'etnia' => 'required'
+        ]);
+
+        $application->nombre = $request->nombre;
+        $application->curp = $request->curp;
+        $application->direccion = $request->direccion;
+        $application->imf = $request->imf;
+        $application->edad = $request->edad;
+        $application->telefono = $request->telefono;
+        $application->sexo = $request->sexo;
+        $application->limitacion = $request->limitacion;
+        $application->escolaridad = $request->escolaridad;
+        $application->plantel = $request->plantel;
+        $application->etnia = $request->etnia;
+
+        $application->save();
+
+        return redirect('/application'); 
     }
 
     /**
@@ -81,6 +140,7 @@ class ApplicationController extends Controller
      */
     public function destroy(Application $application)
     {
-        //
+        $application->delete();
+        return redirect('/application');
     }
 }

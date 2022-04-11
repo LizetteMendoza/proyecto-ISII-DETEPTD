@@ -26,20 +26,26 @@
         </tr>
     
         <tr>
-            <th>{{$application->nombre}}</th>
-            <th>{{$application->curp}}</th>
-            <th>{{$application->direccion}}</th>
-            <th>{{$application->imf}}</th>
-            <th>{{$application->edad}}</th>
-            <th>{{$application->telefono}}</th>
-            <th>{{$application->sexo}}</th>
-            <th>{{$application->limitacion}}</th>
-            <th>{{$application->escolaridad}}</th>
-            <th>{{$application->plantel}}</th>
-            <th>{{$application->etnia}}</th>
-            <th>
-                <a href="solicitud/{{$application->id}}/edit">Editar</a>
-            </th>
+            <td>{{$application->nombre}}</td>
+            <td>{{$application->curp}}</td>
+            <td>{{$application->direccion}}</td>
+            <td>{{$application->imf}}</td>
+            <td>{{$application->edad}}</td>
+            <td>{{$application->telefono}}</td>
+            <td>{{$application->sexo}}</td>
+            <td>{{$application->limitacion}}</td>
+            <td>{{$application->escolaridad}}</td>
+            <td>{{$application->plantel}}</td>
+            <td>{{$application->etnia}}</td>
+            <td>
+                <a href="application/{{$application->id}}/edit">Editar</a>
+
+               <form action="/application/{{$application->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                   <input type="submit" value="Borrar">
+               </form>
+            </td>
             
         </tr>
    

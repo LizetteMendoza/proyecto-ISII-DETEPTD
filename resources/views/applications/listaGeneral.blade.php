@@ -39,7 +39,7 @@
             <th>{{$application->plantel}}</th>
             <th>{{$application->etnia}}</th>
             <th>
-                <a href="solicitud/{{$application->id}}">Ver detalles</a>
+                <a href="/application/{{$application->id}}">Ver detalles</a>
             </th>
             
         </tr>
