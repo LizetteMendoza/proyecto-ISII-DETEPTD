@@ -38,7 +38,7 @@
             <td>{{$application->plantel}}</td>
             <td>{{$application->etnia}}</td>
             <td>
-                <a href="application/{{$application->id}}/edit">Editar</a>
+                <a href="/application/{{$application->id}}/edit">Editar</a>
 
                <form action="/application/{{$application->id}}" method="POST">
                     @csrf
