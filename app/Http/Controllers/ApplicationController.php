@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ApplicationController extends Controller
 {
+    
+    
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +22,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-       $applications = Application::get(); 
-       return view('applications.listaGeneral', compact('applications'));
+       
+       $application= Auth::user()->application;
+       return view('applications.listaGeneral', compact('application'));
     }
 
     /**
@@ -25,6 +34,10 @@ class ApplicationController extends Controller
      */
     public function create()
     {
+        $applications= Auth::user()->application;
+        if ($applications != null){
+            return view('index');
+        }
         return view('applications.formularioSolicitud');
     }
 
@@ -53,6 +66,7 @@ class ApplicationController extends Controller
         $solicitud = new Application(); //Se crea un objeto del modelo Application para poder guardaro en él
         $solicitud->nombre = $request->nombre;
         $solicitud->curp = $request->curp;
+        $solicitud->user_id = Auth::id();
         $solicitud->direccion = $request->direccion;
         $solicitud->imf = $request->imf;
         $solicitud->edad = $request->edad;
@@ -141,6 +155,6 @@ class ApplicationController extends Controller
     public function destroy(Application $application)
     {
         $application->delete();
-        return redirect('/application');
+        return redirect('/index');
     }
 }

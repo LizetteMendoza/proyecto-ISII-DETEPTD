@@ -26,6 +26,9 @@ return new class extends Migration
             $table->string('escolaridad');
             $table->string('plantel');
             $table->string('etnia');
+            $table->unsignedBigInteger('user_id')->unique();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            //onUpdate('cascade') en caso de que cambien el id
             $table->timestamps();
         });
     }
