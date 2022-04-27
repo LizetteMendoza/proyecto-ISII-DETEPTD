@@ -24,6 +24,10 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/soporte', function () {
+    return view('soporte');
+});
+
 Route::resource('/application', ApplicationController::class);
 
 Route::middleware([

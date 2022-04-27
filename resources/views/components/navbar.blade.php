@@ -77,6 +77,13 @@
             <span>Cerrar sesión</span></a>
           </form>
         </li><!-- End Error 404 Page Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/soporte">
+            <i class="bi bi-card-list"></i>
+            <span>Soporte</span>
+          </a>
+        </li><!-- End Register Page Nav -->
   
       </ul>
   
