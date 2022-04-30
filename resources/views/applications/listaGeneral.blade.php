@@ -13,7 +13,7 @@
 <body>
     <x-navbar></x-navbar>
     <main class="main" id="main">
-        <h1 class="mt-3">Estatus de solicitud</h1>
+        <h1 class="mt-3">Estatus de trámite</h1>
     
         <table class="table mt-3">
             <tr class="bg-info text-white">
@@ -45,7 +45,7 @@
                 <th>{{$application->etnia}}</th>-->
                 <th>PENDIENTE</th>
                 <th>
-                    <a href="/application/{{$application->id}}" class="btn btn-primary">Ver detalles</a>
+                    <a href="/application/{{$application->id}}" class="btn btn-primary">Ver perfil</a>
                 </th>
             </tr>
         </table>

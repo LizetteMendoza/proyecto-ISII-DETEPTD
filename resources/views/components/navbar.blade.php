@@ -39,20 +39,27 @@
         </li><!-- End Components Nav -->
 
         <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="application/create">
+            <i class="bi bi-card-list"></i>
+            <span>Crear solicitud</span>
+          </a>
+        </li><!-- End Crear solicitud Page Nav -->
   
         <li class="nav-item">
           <a class="nav-link collapsed" href="application/">
             <i class="bi bi-person"></i>
-            <span>Estatus de aplicación</span>
+            <span>Estatus de Trámite</span>
           </a>
-        </li><!-- End Profile Page Nav -->
+        </li><!-- End estatus de tramite Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#">
+          <a class="nav-link collapsed" href="/soporte">
             <i class="bi bi-envelope"></i>
-            <span>Contactanos</span>
+            <span>contactanos</span>
           </a>
-        </li><!-- End Contact Page Nav -->
+        </li><!-- End contactanos Page Nav -->
   
         <li class="nav-item">
           <a class="nav-link collapsed" href="/register">
@@ -77,13 +84,6 @@
             <span>Cerrar sesión</span></a>
           </form>
         </li><!-- End Error 404 Page Nav -->
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="/soporte">
-            <i class="bi bi-card-list"></i>
-            <span>Soporte</span>
-          </a>
-        </li><!-- End Register Page Nav -->
   
       </ul>
   

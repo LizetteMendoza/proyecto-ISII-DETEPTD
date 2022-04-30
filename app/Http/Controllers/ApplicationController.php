@@ -36,7 +36,7 @@ class ApplicationController extends Controller
     {
         $applications= Auth::user()->application;
         if ($applications != null){
-            return view('index');
+            return redirect('/index');
         }
         return view('applications.formularioSolicitud');
     }
@@ -51,11 +51,11 @@ class ApplicationController extends Controller
     {
         $request-> validate([
             'nombre'=>'required',
-            'curp' => 'required',
+            'curp' => 'required|max:18|min:18',
             'direccion' => 'required',
             'imf' => 'required',
-            'edad' => 'required',
-            'telefono' => 'required',
+            'edad' => 'required|max:3',
+            'telefono' => 'required|max:10',
             'sexo' => 'required',
             'limitacion' => 'required',
             'escolaridad'=> 'required',
@@ -117,11 +117,11 @@ class ApplicationController extends Controller
     {
         $request-> validate([
             'nombre'=>'required',
-            'curp' => 'required',
+            'curp' => 'required|max:18|min:18',
             'direccion' => 'required',
             'imf' => 'required',
-            'edad' => 'required',
-            'telefono' => 'required',
+            'edad' => 'required|max:3',
+            'telefono' => 'required|max:10',
             'sexo' => 'required',
             'limitacion' => 'required',
             'escolaridad'=> 'required',
