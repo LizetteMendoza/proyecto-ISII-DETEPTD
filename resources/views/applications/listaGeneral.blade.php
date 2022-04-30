@@ -19,33 +19,22 @@
             <tr class="bg-info text-white">
                 <th scope="col">NOMBRE</th>
                 <th scope="col">CURP</th>
-                <!--<th scope="col">DIRECCION</th>
-                <th scope="col">IMF</th>
-                <th scope="col">EDAD</th>
-                <th scope="col">TELEFONO</th>
-                <th scope="col">SEXO</th>
-                <th scope="col">LIMITACION</th>
-                <th scope="col">ESCOLARIDAD</th>
-                <th scope="col">PLANTEL</th>
-                <th scope="col">ETNIAL</th>-->
                 <th scope="col">ESTATUS</th>
                 <th scope="col">OPCIONES</th>
             </tr>
             <tr>
-                <th>{{$application->nombre}}</th>
-                <th>{{$application->curp}}</th>
-                <!--<th>{{$application->direccion}}</th>
-                <th>{{$application->imf}}</th>
-                <th>{{$application->edad}}</th>
-                <th>{{$application->telefono}}</th>
-                <th>{{$application->sexo}}</th>
-                <th>{{$application->limitacion}}</th>
-                <th>{{$application->escolaridad}}</th>
-                <th>{{$application->plantel}}</th>
-                <th>{{$application->etnia}}</th>-->
-                <th>PENDIENTE</th>
+                <th>{{isset($application)?$application->nombre: ''}}</th>
+                <th>{{isset($application)? $application ->curp :''}}</th>
+                
                 <th>
-                    <a href="/application/{{$application->id}}" class="btn btn-primary">Ver perfil</a>
+                    @isset($application)
+                        PENDIENTE
+                    @endisset
+                </th>
+                <th>
+                    @isset($application)
+                        <a href="/application/{{$application->id}}" class="btn btn-primary">Ver perfil</a>
+                    @endisset
                 </th>
             </tr>
         </table>

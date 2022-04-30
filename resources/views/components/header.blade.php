@@ -2,7 +2,7 @@
 
     <!-- Favicons -->
   <link href="public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="public/assets/img/favicon.png" rel="icon">
+  <link rel="stylesheet" href="{{asset('assets/img/bus.png')}}" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">

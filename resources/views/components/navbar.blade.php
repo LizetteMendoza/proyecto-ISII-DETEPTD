@@ -48,14 +48,14 @@
         </li><!-- End Crear solicitud Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="application/">
+          <a class="nav-link collapsed" href="/application">
             <i class="bi bi-person"></i>
             <span>Estatus de Trámite</span>
           </a>
         </li><!-- End estatus de tramite Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="/soporte">
+          <a class="nav-link collapsed" href="{{route('soporte')}}">
             <i class="bi bi-envelope"></i>
             <span>contactanos</span>
           </a>

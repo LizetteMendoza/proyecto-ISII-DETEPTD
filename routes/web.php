@@ -26,7 +26,10 @@ Route::get('/index', function () {
 
 Route::get('/soporte', function () {
     return view('soporte');
-});
+})->name('soporte');
+
+
+Route::get('/application', [Application::class, 'index'])->name('index');
 
 Route::resource('/application', ApplicationController::class);
 

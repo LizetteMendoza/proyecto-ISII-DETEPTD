@@ -80,10 +80,10 @@
                         </div>
                     </div>
                         <label for="sexo">Sexo</label>
-                        <select name="sexo" value="{{isset($application)? $application ->sexo :''}}"{{old('sexo')}} required class="form-select" id="floatingSelect">
-                            <option value="" {{isset($application)&& $application->limitacion == '' ? 'selected' : ''}}>Mujer</option>
-                            <option value="mujer" {{isset($application)&& $application->limitacion == 'mujer' ? 'selected' : ''}}>Mujer</option>
-                            <option value="hombre" {{isset($application)&& $application->limitacion == 'hombre' ? 'selected' : ''}}>Hombre</option>
+                        <select name="sexo"  value="{{isset($application)? $application ->sexo :''}}"{{old('sexo')}} required id="inputState" class="form-select">
+                            <option value="" {{isset($application)&& $application->sexo == '' ? 'selected' : ''}}></option>
+                            <option value="mujer" {{isset($application)&& $application->sexo == 'mujer' ? 'selected' : ''}}>Mujer</option>
+                            <option value="hombre" {{isset($application)&& $application->sexo == 'hombre' ? 'selected' : ''}}>Hombre</option>
                             @error('sexo')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
