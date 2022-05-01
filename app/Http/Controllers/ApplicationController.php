@@ -79,7 +79,7 @@ class ApplicationController extends Controller
 
         $solicitud->save();
 
-        return redirect('/application'); //Ruta a la que te envía una vez que se guardan los datos, en este caso es el index
+        return redirect('/application')->with('crear','ok'); //Ruta a la que te envía una vez que se guardan los datos, en este caso es el index
 
         //$solicitud//Aquí se validan los datos y se guardan
     }
@@ -143,7 +143,7 @@ class ApplicationController extends Controller
 
         $application->save();
 
-        return redirect('/application'); 
+        return redirect('/application')->with('editar', 'ok'); 
     }
 
     /**
@@ -155,6 +155,6 @@ class ApplicationController extends Controller
     public function destroy(Application $application)
     {
         $application->delete();
-        return redirect('/index');
+        return redirect('/index')->with('eliminar', 'ok');
     }
 }

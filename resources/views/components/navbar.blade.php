@@ -20,29 +20,11 @@
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Opciones</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="application/create">
-                <i class="bi bi-circle"></i><span>Crear solicitud</span>
-              </a>
-            </li>
-            <li>
-              <a href="application/">
-                <i class="bi bi-circle"></i><span>Status de solicitud</span>
-              </a>
-            </li>
-          </ul>    
-        </li><!-- End Components Nav -->
-
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
           <a class="nav-link collapsed" href="application/create">
-            <i class="bi bi-card-list"></i>
+            <i class="bi bi-plus-square"></i>
             <span>Crear solicitud</span>
           </a>
         </li><!-- End Crear solicitud Page Nav -->
@@ -70,7 +52,7 @@
   
         <li class="nav-item">
           <a class="nav-link collapsed" href="/login">
-            <i class="bi bi-box-arrow-in-right"></i>
+            <i class="bi bi-box-arrow-in-left"></i>
             <span>Inicia sesión</span>
           </a>
         </li><!-- End Login Page Nav -->

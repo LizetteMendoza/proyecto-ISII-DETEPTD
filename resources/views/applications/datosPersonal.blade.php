@@ -63,12 +63,12 @@
        
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">OPCIONES</th>
                 <td>
-                    <a href="/application/{{$application->id}}/edit" class="btn btn-primary mb-1">Editar</a>
+                    <a href="/application/{{$application->id}}/edit" id ="editar"class="btn btn-primary mb-1">Editar</a>
         
-                   <form action="/application/{{$application->id}}" method="POST">
+                   <form id="Borrar" action="/application/{{$application->id}}" method="POST">
                         @csrf
                         @method('DELETE')
-                       <input type="submit" value="Borrar" class="btn btn-primary">
+                       <input type="submit"  id="formSubmit" value="Borrar" onclick="detener(event);" class="btn btn-primary">
                    </form>
                 </td>        
         </table> 
@@ -77,5 +77,4 @@
 </body>
 <x-footer>
 </x-footer>
-
 </html>
