@@ -73,9 +73,6 @@
                 </td>        
         </table> 
     </div>
-    
-
-    
     </main>
 </body>
 <x-footer>

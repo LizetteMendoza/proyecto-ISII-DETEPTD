@@ -13,8 +13,9 @@
     <x-navbar></x-navbar>
     <main class="main" id="main">
     <h1>Bienvenido</h1>
-    
+    <img src="{{asset('assets/img/bus.png')}}" alt="bus">
     </main>
 </body>
 <x-footer></x-footer>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>

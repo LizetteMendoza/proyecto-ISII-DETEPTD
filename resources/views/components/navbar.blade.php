@@ -4,7 +4,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
   
       <div class="d-flex align-items-center justify-content-between">
-        <a href="/index" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="{{asset('assets/img/bus.png')}}" alt="bus">
          <!-- <i class=" ri-bus-2-fill"></i>-->
           <span class="d-none d-lg-block">DETEPTD
