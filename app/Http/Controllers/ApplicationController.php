@@ -36,7 +36,7 @@ class ApplicationController extends Controller
     {
         $applications= Auth::user()->application;
         if ($applications != null){
-            return redirect('/index');
+            return redirect('/index')->with('solicitud','ok');
         }
         return view('applications.formularioSolicitud');
     }

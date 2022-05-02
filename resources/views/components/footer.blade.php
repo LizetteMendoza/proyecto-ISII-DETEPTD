@@ -11,6 +11,7 @@
 <!-- Template Main JS File -->
 <script src="{{asset('assets/js/main.js')}}"></script>
 
+<!--Alerts de session-->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @if(session('eliminar')=='ok')
     <script>
@@ -30,7 +31,6 @@
     </script>
     @endif
 
-    
     @if(session('crear')=='ok')
     <script>
         Swal.fire(
@@ -40,6 +40,25 @@
     </script>
     @endif
 
+    @if(session('solicitud')=='ok')
+    <script>
+        Swal.fire(
+        'Ya tienes una solicitud creada!',
+        'Puedes ir a la sección de estatus de trámite para editarla',
+        'success')
+    </script>
+    @endif
+
+    @if(session('inicio')=='ok')
+    <script>
+        Swal.fire(
+        'Ya has iniciado sesión',
+        '',
+        'success')
+    </script>
+    @endif
+
+    <!--Validación del form para eliminar solicitud-->
     <script type="text/javascript">
         function detener(evt){
             evt.preventDefault();
@@ -59,3 +78,24 @@
             })
         };
     </script>
+
+<!--Validación del form para crear solicitud-->
+<script type="text/javascript">
+    function actualizar(evt){
+        evt.preventDefault();
+        Swal.fire({
+        title: '¿Está seguro?',
+        text: "Tu solicitud está a punto de enviarse!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, enviar!',
+        cancelButtonText: 'Cancelar',
+        }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById("actualizar").submit();
+        }
+        })
+    };
+</script>

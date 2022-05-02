@@ -17,11 +17,11 @@
             <div class="p-5">
                 @isset($application)
                     <h1 class="mt-3 text-primary">Editar formulario de solicitud</h1><br><br>
-                    <form action="/application/{{$application->id}}" method="POST">
+                    <form id="actualizar" action="/application/{{$application->id}}" method="POST">
                     @method('PATCH')
                 @else            
                     <h1 class="card-title">Formulario de solicitud</h1><br><br>    
-                    <form action="/application" method="POST"> <!--ruta que recibe la info y redirecciona, la ruta es la definida en web para el controlador-->
+                    <form id="actualizar"action="/application" method="POST"> <!--ruta que recibe la info y redirecciona, la ruta es la definida en web para el controlador-->
                 @endisset
             
                     @csrf
@@ -121,7 +121,10 @@
                         <div class="alert alert-danger">{{$message}}</div>
                         @enderror
                     </div>
-                    <input type="submit" value="Guardar" class="btn btn-primary">
+                    @isset($application)
+                        <input type="submit" value="Guardar" class="btn btn-primary"> 
+                    @endisset
+                        <input type="submit" value="Guardar" id="formSubmit" onclick="actualizar(event);" class="btn btn-primary"> 
                 </form>
             </div>
         </div>
