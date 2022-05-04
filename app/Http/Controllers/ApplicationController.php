@@ -23,8 +23,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-       
        $application= Auth::user()->application;
+       //Application::with('user', 'limitations')->get();
+       //return($application);
        return view('applications.listaGeneral', compact('application'));
     }
 
