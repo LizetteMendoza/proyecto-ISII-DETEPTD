@@ -112,11 +112,15 @@
                         @enderror
                     </div>
                     <div>
-                        <label for="etnia">Etnia</label>
-                        <input type="text" name="etnia" value="{{isset($application)? $application ->etnia :''}}"{{old('etnia')}} required class="form-control" id="inputText"><br>
-                        @error('etinia')
-                        <div class="alert alert-danger">{{$message}}</div>
-                        @enderror
+                        <label for="etnia">¿Pertenece a algún grupo indigena?</label>
+                        <select name="etnia"  value="{{old('etnia')}}" required id="inputState" class="form-select">
+                            <option value="" ></option>
+                            <option value="Si">Sí</option>
+                            <option value="No">No</option>
+                            @error('etnia')
+                                <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
+                        </select><br>
                     </div>
                     @if (isset($application))
                         <input type="submit" value="Guardar" class="btn btn-primary">

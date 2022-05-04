@@ -111,10 +111,15 @@
                     </div>
                     <div>
                         <label for="etnia">Etnia</label>
-                        <input type="text" name="etnia" value="{{isset($application)? $application ->etnia :''}}"{{old('etnia')}} required class="form-control" id="inputText"><br>
-                        @error('etinia')
-                        <div class="alert alert-danger">{{$message}}</div>
-                        @enderror
+                        <select name="etnia"  value="{{isset($application)? $application ->etnia :''}}"{{old('etnia')}} required id="inputState" class="form-select">
+                
+                            <option value=""{{isset($application)&& $application->etnia == '' ? 'selected' : ''}} ></option>
+                            <option value="Si"{{isset($application)&& $application->etnia == 'Si' ? 'selected' : ''}}>Sí</option>
+                            <option value="No"{{isset($application)&& $application->etnia == 'No' ? 'selected' : ''}}>No</option>
+                            @error('etnia')
+                                <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
+                        </select><br>
                     </div>
                     @if (isset($application))
                         <input type="submit" value="Guardar" class="btn btn-primary">
