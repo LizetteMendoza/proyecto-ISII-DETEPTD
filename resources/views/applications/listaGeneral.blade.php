@@ -25,12 +25,8 @@
             <tr>
                 <th>{{isset($application)?$application->nombre: ''}}</th>
                 <th>{{isset($application)? $application ->curp :''}}</th>
+                <th>{{isset($application)? $application->estatus :''}}</th>
                 
-                <th>
-                    @isset($application)
-                        PENDIENTE
-                    @endisset
-                </th>
                 <th>
                     @isset($application)
                         <a href="/application/{{$application->id}}" class="btn btn-primary">Ver perfil</a>

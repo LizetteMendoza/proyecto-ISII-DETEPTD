@@ -22,10 +22,10 @@ return new class extends Migration
             $table->smallInteger('edad');
             $table->string('telefono',10);
             $table->string('sexo');
-            $table->string('limitacion');
             $table->string('escolaridad');
             $table->string('plantel');
             $table->string('etnia');
+            $table->string('estatus')->default('Pendiente');
             $table->unsignedBigInteger('user_id')->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             //onUpdate('cascade') en caso de que cambien el id

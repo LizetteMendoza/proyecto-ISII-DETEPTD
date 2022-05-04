@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Limitation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,11 +35,12 @@ class ApplicationController extends Controller
      */
     public function create()
     {
+        $limitations = Limitation::all();
         $applications= Auth::user()->application;
         if ($applications != null){
             return redirect('/index')->with('solicitud','ok');
         }
-        return view('applications.formularioSolicitud');
+        return view('applications.formularioSolicitud', compact('limitations'));
     }
 
     /**
@@ -57,13 +59,19 @@ class ApplicationController extends Controller
             'edad' => 'required|max:3',
             'telefono' => 'required|max:10',
             'sexo' => 'required',
-            'limitacion' => 'required',
             'escolaridad'=> 'required',
             'plantel'=> 'required',
-            'etnia' => 'required'
+            'etnia' => 'required',
+            'limitation_id' => 'required'
         ]);
 
-        $solicitud = new Application(); //Se crea un objeto del modelo Application para poder guardaro en él
+        $request->merge(['user_id'=> Auth::id()]);
+
+        $solicitud = Application::create($request->all());
+
+        $solicitud->limitations()->attach($request->limitation_id);
+
+        /*$solicitud = new Application(); //Se crea un objeto del modelo Application para poder guardaro en él
         $solicitud->nombre = $request->nombre;
         $solicitud->curp = $request->curp;
         $solicitud->user_id = Auth::id();
@@ -72,12 +80,12 @@ class ApplicationController extends Controller
         $solicitud->edad = $request->edad;
         $solicitud->telefono = $request->telefono;
         $solicitud->sexo = $request->sexo;
-        $solicitud->limitacion = $request->limitacion;
+        $solicitud->limitations()->attach($request->limitation_id);
         $solicitud->escolaridad = $request->escolaridad;
         $solicitud->plantel = $request->plantel;
         $solicitud->etnia = $request->etnia;
 
-        $solicitud->save();
+        $solicitud->save();*/
 
         return redirect('/application')->with('crear','ok'); //Ruta a la que te envía una vez que se guardan los datos, en este caso es el index
 
@@ -103,7 +111,8 @@ class ApplicationController extends Controller
      */
     public function edit(Application $application)
     {
-        return view('applications.formularioSolicitud', compact('application'));
+        $limitations = Limitation::all();
+        return view('applications.formularioEditar', compact('application', 'limitations'));
     }
 
     /**
@@ -123,13 +132,16 @@ class ApplicationController extends Controller
             'edad' => 'required|max:3',
             'telefono' => 'required|max:10',
             'sexo' => 'required',
-            'limitacion' => 'required',
             'escolaridad'=> 'required',
             'plantel'=> 'required',
-            'etnia' => 'required'
+            'etnia' => 'required',
+            'limitation_id' => 'required'
         ]);
 
-        $application->nombre = $request->nombre;
+        Application::where('id', $application->id)->update($request->except(['_token', '_method', 'limitation_id']));
+
+        $application->limitations()->sync($request->limitation_id);
+        /*$application->nombre = $request->nombre;
         $application->curp = $request->curp;
         $application->direccion = $request->direccion;
         $application->imf = $request->imf;
@@ -141,7 +153,8 @@ class ApplicationController extends Controller
         $application->plantel = $request->plantel;
         $application->etnia = $request->etnia;
 
-        $application->save();
+        $application->save();*/
+
 
         return redirect('/application')->with('editar', 'ok'); 
     }

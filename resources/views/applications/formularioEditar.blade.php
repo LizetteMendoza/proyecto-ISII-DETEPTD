@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulario de solicitud</title>
-
-
   <x-header></x-header>
 </head>
 <body class="bg-gradient-primary">
@@ -91,7 +89,7 @@
                     <label for="limitation_id">Limitación</label>
                     <select name="limitation_id[]" multiple required id="inputState" class="form-select">
                         @foreach ($limitations as $limitation)
-                            <option value="{{$limitation->id}}">{{$limitation->limitacion}}</option>
+                            <option value="{{$limitation->id}}"{{isset($limitations)&& array_search($limitation->id, $application->limitations->pluck('id')->toArray())!== false ? 'selected': ''}}{{old('limitation_id')}} >{{$limitation->limitacion}}</option>
                         @endforeach
                         @error('limitation_id')
                                 <div class="alert alert-danger">{{$message}}</div>

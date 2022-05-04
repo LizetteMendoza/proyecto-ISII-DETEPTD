@@ -44,7 +44,9 @@
             </tr>    
             <tr>
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">LIMITACION</th>
-                <td>{{$application->limitacion}}</td>
+               <td>@foreach ($application->limitations as $limitation)
+                    {{$limitation->limitacion}}
+                @endforeach</td>
             </tr>
             <tr>
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">ESCOLARIDAD</th>

@@ -23,7 +23,7 @@
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="application/create">
+          <a class="nav-link collapsed" href="/application/create">
             <i class="bi bi-plus-square"></i>
             <span>Crear solicitud</span>
           </a>
