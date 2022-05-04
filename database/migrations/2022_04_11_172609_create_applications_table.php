@@ -20,10 +20,11 @@ return new class extends Migration
             $table->string('direccion');
             $table->integer('imf');
             $table->smallInteger('edad');
+            $table->string('localidad');
             $table->string('telefono',10);
             $table->string('sexo');
             $table->string('escolaridad');
-            $table->string('plantel');
+            $table->string('plantel')->default('CUCEI');
             $table->string('etnia');
             $table->string('estatus')->default('Pendiente');
             $table->unsignedBigInteger('user_id')->unique();

@@ -51,6 +51,15 @@
                         </div>
                     </div>
                     <div class="row mb-3">
+                        <label for="localidad" class="col-sm-2 col-form-label">Localidad</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="localidad" value="{{isset($application)? $application ->localidad :''}}"{{old('localidad')}} required class="form-control ms-5" id="inputText"><br>
+                            @error('localidad')
+                                <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <label for="imf" class="col-sm-2 col-form-label">Ingreso mensual familiar</label>
                         <div class="col-sm-10">
                             <input type="text" name="imf" value="{{isset($application)? $application ->imf :''}}"{{old('imf')}}required class="form-control ms-5" id="inputText"><br>

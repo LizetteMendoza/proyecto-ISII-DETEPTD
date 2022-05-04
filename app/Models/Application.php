@@ -10,7 +10,7 @@ class Application extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','nombre','curp','direccion','imf','edad','telefono','sexo','escolaridad','plantel','etnia'];
+    protected $fillable = ['user_id','nombre','curp','direccion','imf','edad','telefono','sexo','escolaridad','plantel','etnia', 'localidad'];
 
     public function user(){
         return $this->belongsTo(User::class);

@@ -27,6 +27,10 @@
                 <td class="p-3 mb-2">{{$application->direccion}}</td>
             </tr>
             <tr>
+                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">LOCALIDAD</th>
+                <td class="p-3 mb-2">{{$application->localidad}}</td>
+            </tr>
+            <tr>
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">IMF</th>
                 <td class="p-3 mb-2">{{$application->imf}}</td>
             </tr>
@@ -57,12 +61,11 @@
                 <td>{{$application->plantel}}</td>
             </tr>   
             <tr>
-                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">GRUPO INDIGENA</th>
+                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">GRUPO INDÍGENA</th>
                 <td>{{$application->etnia}}</td>
         </table>
         <table>
             <tr>
-       
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">OPCIONES</th>
                 <td>
                     <a href="/application/{{$application->id}}/edit" id ="editar"class="btn btn-primary mb-1">Editar</a>
