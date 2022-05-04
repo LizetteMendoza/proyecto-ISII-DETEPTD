@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
-
-
+use App\Http\Controllers\ContactanosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +27,9 @@ Route::get('/soporte', function () {
     return view('soporte');
 })->name('soporte');
 
+Route::get('/contactanos', [ContactanosController::class, 'index'])->name('contactanos.index'); //me manda al form de contacto
+
+Route::post('/contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
 Route::get('/application', [Application::class, 'index'])->name('index');
 

@@ -37,7 +37,7 @@
         </li><!-- End estatus de tramite Page Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="{{route('soporte')}}">
+          <a class="nav-link collapsed" href="{{route('contactanos.index')}}">
             <i class="bi bi-envelope"></i>
             <span>contactanos</span>
           </a>

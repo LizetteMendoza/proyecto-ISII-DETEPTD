@@ -15,21 +15,7 @@ class ApplicationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('applications')->insert([
-            'nombre' => 'Lizette Victoria Mendoza Ornelas',
-            'curp'=> 'MEOL921209MJCNRZ08',
-            'direccion' => "Allende 122 colonia centro",
-            'imf' => '10000',
-            'edad'=> 19,
-            'telefono' =>3311906632,
-            'sexo'=>'mujer',
-            'limitacion' => 'ninguna',
-            'escolaridad' => 'licenciatura',
-            'plantel' => 'CUALTOS',
-            'etnia'=> 'N/A',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
+        
         DB::table('applications')->insert([
             'nombre' => 'Maciasl Luna Pedro Daniel',
             'curp'=> 'MLPD901022HJCNRZ01',

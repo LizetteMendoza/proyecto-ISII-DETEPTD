@@ -58,6 +58,15 @@
     </script>
     @endif
 
+    @if(session('correo')=='ok')
+    <script>
+        Swal.fire(
+        'Tu correo fue enviado satisfactoriamente',
+        'Gracias por contactarnos',
+        'success')
+    </script>
+    @endif
+
     <!--Validación del form para eliminar solicitud-->
     <script type="text/javascript">
         function detener(evt){

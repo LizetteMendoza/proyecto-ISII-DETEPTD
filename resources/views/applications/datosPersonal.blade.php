@@ -12,8 +12,8 @@
     <x-navbar></x-navbar>
     <main class="main" id="main">
     <h1 class="text-primary">Perfil del Solicitante</h1>
-    <div class="container-fluid px-4 justify-contecnt-center">
-        <table class="table border border-5 borer-primary rounded w-75">
+    <div class="container-fluid px-4 justify-content-center">
+        <table class="table border border-5 border-info rounded w-75">
             <tr>
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">NOMBRE</th>
                 <td class="p-3 mb-2">{{$application->nombre}}</td>
@@ -23,7 +23,7 @@
                 <td class="p-3 mb-2">{{$application->curp}}</td>
             </tr>
             <tr>
-                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">DIRECCION</th>
+                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">DIRECCIÓN</th>
                 <td class="p-3 mb-2">{{$application->direccion}}</td>
             </tr>
             <tr>
@@ -35,7 +35,7 @@
                 <td class="p-3 mb-2">{{$application->edad}}</td>
             </tr>
             <tr>
-                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">TELEFONO</th>
+                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">TELÉFONO</th>
                 <td class="p-3 mb-2">{{$application->telefono}}</td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
                 <td>{{$application->sexo}}</td>
             </tr>    
             <tr>
-                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">LIMITACION</th>
+                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">LIMITACIÓN</th>
                <td>@foreach ($application->limitations as $limitation)
                     {{$limitation->limitacion}}
                 @endforeach</td>
@@ -57,7 +57,7 @@
                 <td>{{$application->plantel}}</td>
             </tr>   
             <tr>
-                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">ETNIAL</th>
+                <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">GRUPO INDIGENA</th>
                 <td>{{$application->etnia}}</td>
         </table>
         <table>
