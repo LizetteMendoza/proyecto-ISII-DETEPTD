@@ -7,6 +7,11 @@
     <title>Formulario de solicitud</title>
   <x-header></x-header>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/js/bootstrap-select.min.js"></script>
+
 <body class="bg-gradient-primary">
     <x-navbar></x-navbar>
     <main class="main" id="main">
@@ -86,49 +91,69 @@
                             @enderror
                         </div>
                     </div>
-                        <label for="sexo">Sexo</label>
-                        <select name="sexo"  value="{{isset($application)? $application ->sexo :''}}"{{old('sexo')}} required id="inputState" class="form-select">
-                            <option value="" {{isset($application)&& $application->sexo == '' ? 'selected' : ''}}></option>
-                            <option value="mujer" {{isset($application)&& $application->sexo == 'mujer' ? 'selected' : ''}}>Mujer</option>
-                            <option value="hombre" {{isset($application)&& $application->sexo == 'hombre' ? 'selected' : ''}}>Hombre</option>
-                            @error('sexo')
-                                <div class="alert alert-danger">{{$message}}</div>
-                            @enderror
-                        </select><br>
-                    <label for="limitation_id">Limitación</label>
-                    <select name="limitation_id[]" multiple required id="inputState" class="form-select">
-                        @foreach ($limitations as $limitation)
-                            <option value="{{$limitation->id}}"{{isset($limitations)&& array_search($limitation->id, $application->limitations->pluck('id')->toArray())!== false ? 'selected': ''}}{{old('limitation_id')}} >{{$limitation->limitacion}}</option>
-                        @endforeach
-                        @error('limitation_id')
-                                <div class="alert alert-danger">{{$message}}</div>
-                        @enderror
-                    </select><br>
-                    <div>
-                        <label for="escolaridad">Escolaridad</label>
-                        <input type="text" name="escolaridad" value="{{isset($application)? $application ->escolaridad :''}}"{{old('escolaridad')}} required  class="form-control" id="inputText"><br>            
-                         @error('escolaridad')
-                            <div class="alert alert-danger">{{$message}}</div>
-                        @enderror
+                    <div class="row mb-3">
+                        <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
+                        <div class="col-sm-10">
+                            <select name="sexo"  value="{{old('sexo')}}" required id="inputState" class="border rounded-3 ms-5">
+                                <option value="" {{isset($application)&& $application->sexo == '' ? 'selected' : ''}}></option>
+                                <option value="mujer" {{isset($application)&& $application->sexo == 'mujer' ? 'selected' : ''}}>Mujer</option>
+                                <option value="hombre" {{isset($application)&& $application->sexo == 'hombre' ? 'selected' : ''}}>Hombre</option>
+                                @error('sexo')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </select><br>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="limitation_id" class="col-sm-2 col-form-label">Limitación</label>
+                        <div class="col-sm-10">
+                            <select name="limitation_id[]" multiple required id="inputState" class="selectpicker border rounded-3 ms-5">
+                                @foreach ($limitations as $limitation)
+                                <option value="{{$limitation->id}}"{{isset($limitations)&& array_search($limitation->id, $application->limitations->pluck('id')->toArray())!== false ? 'selected': ''}}{{old('limitation_id')}} >{{$limitation->limitacion}}</option>
+                        
+                                @endforeach
+                                @error('limitation_id')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </select><br>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="escolaridad" class="col-sm-2 col-form-label">Escolaridad</label>
+                        <div class="col-sm-10">
+                            <select name="escolaridad"  value="{{old('escolaridad')}}"  required id="inputState" class="border rounded-3 ms-5">
+                                <option value="" ></option>
+                                <option value="licenciatura" {{isset($application)&& $application->escolaridad == 'licenciatura' ? 'selected' : ''}}>Licenciatura</option>
+                                <option  value="maestria" {{isset($application)&& $application->escolaridad == 'maestria' ? 'selected' : ''}}>Maestria</option>
+                                <option value="doctorado" {{isset($application)&& $application->escolaridad == 'doctorado' ? 'selected' : ''}}>Doctorado</option>
+                                @error('escolaridad')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </select><br>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="plantel" class="col-sm-2 col-form-label">Plantel</label>
+                        <div class="col-sm-10">
+                            <select name="plantel"  value="{{old('plantel')}}"  required id="inputState" class="border rounded-3 ms-5">
+                                <option value="" ></option>
+                                <option value="CUCEI" {{isset($application)&& $application->plantel == 'CUCEI' ? 'selected' : ''}}>CUCEI</option>
+                                @error('plantel')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </select><br>
+                        </div>
                     </div>
                     <div>
-                        <label for="plantel">Plantel</label>
-                        <input type="text" name="plantel" value="{{isset($application)? $application ->plantel :''}}"{{old('plantel')}} required class="form-control" id="inputText"><br>
-                        @error('plantel')
-                            <div class="alert alert-danger">{{$message}}</div>
-                        @enderror
-                    </div>
-                    <div>
-                        <label for="etnia">Etnia</label>
-                        <select name="etnia"  value="{{isset($application)? $application ->etnia :''}}"{{old('etnia')}} required id="inputState" class="form-select">
-                
-                            <option value=""{{isset($application)&& $application->etnia == '' ? 'selected' : ''}} ></option>
+                        <label for="etnia">¿Pertenece a algún grupo indigena?</label>
+                        <select name="etnia"  value="{{old('etnia')}}" required id="inputState" class="border rounded-3">
+                            option value=""{{isset($application)&& $application->etnia == '' ? 'selected' : ''}} ></option>
                             <option value="Si"{{isset($application)&& $application->etnia == 'Si' ? 'selected' : ''}}>Sí</option>
                             <option value="No"{{isset($application)&& $application->etnia == 'No' ? 'selected' : ''}}>No</option>
                             @error('etnia')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
-                        </select><br>
+                        </select><br><br>
                     </div>
                     @if (isset($application))
                         <input type="submit" value="Guardar" class="btn btn-primary">
@@ -137,6 +162,11 @@
                     @endif 
                 </form>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('select').selectpicker();
+                });
+              </script>
         </div>
     </div>
     </section>
