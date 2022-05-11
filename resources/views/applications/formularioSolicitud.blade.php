@@ -20,14 +20,9 @@
     <div class="border border-5 m-4 bg-white" style="width:70%">
         <div class="col-lg-6">
             <div class="p-5">
-                @isset($application)
-                    <h1 class="mt-3 text-primary">Editar formulario de solicitud</h1><br><br>
-                    <form id="actualizar" action="/application/{{$application->id}}" method="POST">
-                    @method('PATCH')
-                @else            
+                         
                     <h1 class="card-title">Formulario de solicitud</h1><br><br>    
                     <form id="actualizar"action="/application" method="POST"> <!--ruta que recibe la info y redirecciona, la ruta es la definida en web para el controlador-->
-                @endisset
             
                     @csrf
                     <div class="row mb-3">
@@ -42,14 +37,14 @@
                     <div class="row mb-3">
                     <label for="curp" class="col-sm-2 col-form-label">CURP</label>
                         <div class="col-sm-10">
-                            <input type="text" name="curp" value="{{old('curp')}}"required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="curp" value="{{old('curp')}}" required class="form-control ms-5" id="inputText"><br>
                             @error('curp')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="direccion" class="col-sm-2 col-form-label">Dirreción</label>
+                        <label for="direccion" class="col-sm-2 col-form-label">Direción</label>
                         <div class="col-sm-10">
                             <input type="text" name="direccion" value="{{old('direccion')}}" required class="form-control ms-5" id="inputText"><br>
                             @error('direccion')
@@ -69,7 +64,7 @@
                     <div class="row mb-3">
                         <label for="imf" class="col-sm-2 col-form-label">Ingreso mensual familiar</label>
                         <div class="col-sm-10">
-                            <input type="text" name="imf" value="{{old('imf')}}"required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="imf" value="{{old('imf')}}"required class="form-control ms-5" id="inputText"><br><br>
                             @error('imf')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -170,7 +165,6 @@
               </script>
         </div>
     </div>
-    
     </section>
     </main>
 </body>

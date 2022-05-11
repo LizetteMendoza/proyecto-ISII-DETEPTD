@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="direccion" class="col-sm-2 col-form-label">Dirreción</label>
+                        <label for="direccion" class="col-sm-2 col-form-label">Direción</label>
                         <div class="col-sm-10">
                             <input type="text" name="direccion" value="{{isset($application)? $application ->direccion :''}}"{{old('direccion')}} required class="form-control ms-5" id="inputText"><br>
                             @error('direccion')

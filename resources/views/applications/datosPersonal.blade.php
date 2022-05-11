@@ -11,9 +11,9 @@
 <body>
     <x-navbar></x-navbar>
     <main class="main" id="main">
-    <h1 class="text-primary">Perfil del Solicitante</h1>
+    <h1 class="text-primary mb-3 fs-1"> <img src="{{asset('assets/img/perfil.png')}}" alt=""> Perfil del Solicitante</h1>
     <div class="container-fluid px-4 justify-content-center">
-        <table class="table border border-5 border-info rounded w-75">
+        <table class="table border border-5 border-info rounded-3 w-75">
             <tr>
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">NOMBRE</th>
                 <td class="p-3 mb-2">{{$application->nombre}}</td>
@@ -64,8 +64,8 @@
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">GRUPO INDÍGENA</th>
                 <td>{{$application->etnia}}</td>
         </table>
-        <table>
-            <tr>
+        <table class=" bg-primary border rounded-3">
+            <tr >
                 <th class="p-3 mb-2 bg-primary bg-opacity-75 text-white">OPCIONES</th>
                 <td>
                     <a href="/application/{{$application->id}}/edit" id ="editar"class="btn btn-primary mb-1">Editar</a>
