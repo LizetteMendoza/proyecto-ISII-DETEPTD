@@ -15,7 +15,7 @@
 <body class="bg-gradient-primary">
     <x-navbar></x-navbar>
     <main class="main" id="main">
-    <div class="border border-5 m-4 bg-white" style="width:70%">
+    <div class="border border-5 rounded-3  m-4 bg-white" style="width:70%">
         <div class="col-lg-10">
             <div class="p-5">
                 @isset($application)
@@ -94,7 +94,7 @@
                     <div class="row mb-3">
                         <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
                         <div class="col-sm-10">
-                            <select name="sexo"  value="{{old('sexo')}}" required id="inputState" class="form-controlborder rounded-3 ms-5">
+                            <select name="sexo"  value="{{old('sexo')}}" required id="inputState" class="form-control border rounded-3 ms-5">
                                 <option value="" {{isset($application)&& $application->sexo == '' ? 'selected' : ''}}></option>
                                 <option value="mujer" {{isset($application)&& $application->sexo == 'mujer' ? 'selected' : ''}}>Mujer</option>
                                 <option value="hombre" {{isset($application)&& $application->sexo == 'hombre' ? 'selected' : ''}}>Hombre</option>

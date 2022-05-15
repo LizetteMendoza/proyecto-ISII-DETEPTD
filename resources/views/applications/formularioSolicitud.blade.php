@@ -17,7 +17,7 @@
 <body class="bg-gradient-primary">
     <x-navbar></x-navbar>
     <main class="main" id="main">
-    <div class="border border-5 m-4 bg-white" style="width:70%">
+    <div class="border border-5 rounded-3  m-4 bg-white" style="width:70%">
         <div class="col-lg-10">
             <div class="p-5">
                          

@@ -13,7 +13,7 @@
 <body>
     <x-navbar></x-navbar>
     <main class="main" id="main">
-        <h1 class="mt-3">Estatus de trámite</h1>
+        <h1 class="mt-3 fw-bold"><img src="{{asset('assets/img/view.png')}}" alt=""> Estatus de trámite</h1>
     
         <table class="table mt-3">
             <tr class="bg-info text-white">
