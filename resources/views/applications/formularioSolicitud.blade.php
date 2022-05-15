@@ -18,10 +18,10 @@
     <x-navbar></x-navbar>
     <main class="main" id="main">
     <div class="border border-5 m-4 bg-white" style="width:70%">
-        <div class="col-lg-6">
+        <div class="col-lg-10">
             <div class="p-5">
                          
-                    <h1 class="card-title">Formulario de solicitud</h1><br><br>    
+                    <h1 class="mt-3 text-primary fw-bold text-center"><img src="{{asset('assets/img/form.png')}}">Formulario de solicitud</h1><br><br>    
                     <form id="actualizar"action="/application" method="POST"> <!--ruta que recibe la info y redirecciona, la ruta es la definida en web para el controlador-->
             
                     @csrf
@@ -91,65 +91,65 @@
                     <div class="row mb-3">
                         <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
                         <div class="col-sm-10">
-                            <select name="sexo"  value="{{old('sexo')}}" required id="inputState" class="border rounded-3 ms-5">
+                            <select name="sexo"  value="{{old('sexo')}}" required id="inputState" class=" form-control border rounded-3 ms-5">
                                 <option value="" ></option>
                                 <option value="mujer">Mujer</option>
                                 <option value="hombre">Hombre</option>
-                                @error('sexo')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
                             </select><br>
+                            @error('sexo')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="limitation_id" class="col-sm-2 col-form-label">Limitación</label>
                         <div class="col-sm-10">
-                            <select name="limitation_id[]" multiple required id="inputState" class="selectpicker border rounded-3 ms-5">
+                            <select name="limitation_id[]" multiple required id="inputState" class="form-control selectpicker border rounded-3 ms-5">
                                 @foreach ($limitations as $limitation)
                                     <option value="{{$limitation->id}}">{{$limitation->limitacion}}</option>
                                 @endforeach
-                                @error('limitation_id')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
                             </select><br>
+                            @error('limitation_id')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="escolaridad" class="col-sm-2 col-form-label">Escolaridad</label>
                         <div class="col-sm-10">
-                            <select name="escolaridad"  value="{{old('escolaridad')}}"  required id="inputState" class="border rounded-3 ms-5">
+                            <select name="escolaridad"  value="{{old('escolaridad')}}"  required id="inputState" class="form-control border rounded-3 ms-5">
                                 <option value="" ></option>
                                 <option value="licenciatura">Licenciatura</option>
                                 <option value="maestria">Maestria</option>
                                 <option value="doctorado">Doctorado</option>
-                                @error('escolaridad')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
                             </select><br>
+                            @error('escolaridad')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="plantel" class="col-sm-2 col-form-label">Plantel</label>
                         <div class="col-sm-10">
-                            <select name="plantel"  value="{{old('plantel')}}"  required id="inputState" class="border rounded-3 ms-5">
+                            <select name="plantel"  value="{{old('plantel')}}"  required id="inputState" class="form-control border rounded-3 ms-5">
                                 <option value="" ></option>
                                 <option value="CUCEI">CUCEI</option>
-                                @error('plantel')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                @enderror
                             </select><br>
+                            @error('plantel')
+                                    <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
                         </div>
                     </div>
                     <div>
                         <label for="etnia">¿Pertenece a algún grupo indigena?</label>
-                        <select name="etnia"  value="{{old('etnia')}}" required id="inputState" class="">
+                        <select name="etnia"  value="{{old('etnia')}}" required id="inputState" class="form-control">
                             <option value="" ></option>
                             <option value="Si">Sí</option>
                             <option value="No">No</option>
-                            @error('etnia')
-                                <div class="alert alert-danger">{{$message}}</div>
-                            @enderror
                         </select><br><br>
+                        @error('etnia')
+                                <div class="alert alert-danger">{{$message}}</div>
+                        @enderror
                     </div>
                     @if (isset($application))
                         <input type="submit" value="Guardar" class="btn btn-primary">

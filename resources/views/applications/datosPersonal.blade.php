@@ -11,7 +11,7 @@
 <body>
     <x-navbar></x-navbar>
     <main class="main" id="main">
-    <h1 class="text-primary mb-3 fs-1"> <img src="{{asset('assets/img/perfil.png')}}" alt=""> Perfil del Solicitante</h1>
+    <h1 class="text-primary mb-3 fs-1 fw-bold"> <img src="{{asset('assets/img/perfil.png')}}" alt=""> Perfil del Solicitante</h1>
     <div class="container-fluid px-4 justify-content-center">
         <table class="table border border-5 border-info rounded-3 w-75">
             <tr>
