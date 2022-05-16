@@ -20,7 +20,7 @@
             <div class="form-group p-4">
                 <label class="text-primary fw-bold">
                     Nombre
-                    <input type="text" class="form-control"  name="name"  value="{{old('name')}}" required>
+                    <input type="text" class="form-control"  name="name"  value="{{old('name')}}" required pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="Ingrese un nombre correcto (solo letras)">
                 </label>
                 @error('name')
                     <div class="alert alert-danger">{{$message}}</div>

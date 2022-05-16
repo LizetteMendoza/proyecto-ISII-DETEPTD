@@ -28,7 +28,7 @@
                     <div class="row mb-3">
                         <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nombre" value="{{old('nombre')}}" required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="nombre" value="{{old('nombre')}}" required pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="Ingrese un nombre correcto (solo letras)" class="form-control ms-5" id="inputText"><br>
                             @error('nombre')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -37,14 +37,14 @@
                     <div class="row mb-3">
                     <label for="curp" class="col-sm-2 col-form-label">CURP</label>
                         <div class="col-sm-10">
-                            <input type="text" name="curp" value="{{old('curp')}}" required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="curp" value="{{old('curp')}}" required pattern="^[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM]{1}(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[0-9A-Z]{1}[0-9]{1}$" title="Ingrese un formato de curp correcto" class="form-control ms-5" id="inputText"><br>
                             @error('curp')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="direccion" class="col-sm-2 col-form-label">Direción</label>
+                        <label for="direccion" class="col-sm-2 col-form-label">Dirección</label>
                         <div class="col-sm-10">
                             <input type="text" name="direccion" value="{{old('direccion')}}" required class="form-control ms-5" id="inputText"><br>
                             @error('direccion')
@@ -64,7 +64,7 @@
                     <div class="row mb-3">
                         <label for="imf" class="col-sm-2 col-form-label">Ingreso mensual familiar</label>
                         <div class="col-sm-10">
-                            <input type="text" name="imf" value="{{old('imf')}}"required class="form-control ms-5" id="inputText"><br><br>
+                            <input type="text" name="imf" value="{{old('imf')}}"required pattern="[0-9]{3,6}" title="Ingrese el monto en numero y correcto" class="form-control ms-5" id="inputText"><br><br>
                             @error('imf')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -73,7 +73,7 @@
                     <div class="row mb-3">
                         <label for="edad" class="col-sm-2 col-form-label">Edad</label>
                         <div class="col-sm-10">
-                            <input type="text" name="edad" value="{{old('edad')}}" required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="edad" value="{{old('edad')}}" required required pattern="[0-9]{2,3}" title="Ingrese la edad en numero y correctamente" class="form-control ms-5" id="inputText"><br>
                             @error('edad')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -82,7 +82,7 @@
                     <div class="row mb-3">
                         <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
                         <div class="col-sm-10">
-                            <input type="text" name="telefono" value="{{old('telefono')}}" required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="telefono" value="{{old('telefono')}}" required pattern="[0-9]{10}" title="Ingrese un número telefonico valido" class="form-control ms-5" id="inputText"><br>
                             @error('telefono')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -154,7 +154,7 @@
                     @if (isset($application))
                         <input type="submit" value="Guardar" class="btn btn-primary">
                     @else
-                        <input type="submit" value="Guardar" id="formSubmit" onclick="actualizar(event);" class="btn btn-primary"> 
+                        <input type="submit" value="Guardar" id="formSubmit" class="btn btn-primary"> 
                     @endif 
                 </form>
             </div>
