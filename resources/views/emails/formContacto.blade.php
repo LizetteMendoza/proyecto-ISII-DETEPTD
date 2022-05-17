@@ -12,8 +12,36 @@
     <x-navbar></x-navbar>
     <main class="main" id="main">
     <h1 class="mt-4 text-info text-center p-4"><img src="{{asset('img/email.png')}}" alt="" > Contactanos</h1>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{asset('assets/img/soporte2.png')}}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{asset('assets/img/soporte1.png')}}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{asset('assets/img/soporte3.png')}}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     
     <div  class="container p-5 border border-3   border-primary rounded w-75">
+        
         <h1 class=" rounded mt-4 text-white text-center p-4 bg-primary">Formulario de contacto</h1>
         <form action="{{route('contactanos.store')}}" method="POST">
             @csrf
