@@ -11,7 +11,6 @@
     
     <x-navbar></x-navbar>
     <main class="main" id="main">
-    <h1 class="mt-4 text-info text-center p-4"><img src="{{asset('img/email.png')}}" alt="" > Contactanos</h1>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -40,13 +39,14 @@
         </button>
       </div>
     
-    <div  class="container p-5 border border-3   border-primary rounded w-75">
+    <div  class="container p-5 border border-3   border rounded w-75 mt-2">
         
-        <h1 class=" rounded mt-4 text-white text-center p-4 bg-primary">Formulario de contacto</h1>
+        <h1 class=" rounded mt-3 card-title fs-1 fw-bold text-center p-4"> <img src="{{asset('assets/img/contacto1.png')}}" alt=""> Formulario de contacto</h1>
         <form action="{{route('contactanos.store')}}" method="POST">
             @csrf
-            <div class="form-group p-4">
-                <label class="text-primary fw-bold">
+
+            <div class="form-group p-2">
+                <label class="card-title fw-bold">
                     Nombre
                     <input type="text" class="form-control"  name="name"  value="{{old('name')}}" required pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="Ingrese un nombre correcto (solo letras)">
                 </label>
@@ -54,8 +54,8 @@
                     <div class="alert alert-danger">{{$message}}</div>
                 @enderror
             </div>
-            <div class="form-group p-4">
-                <label class="text-primary fw-bold">
+            <div class="form-group p-2">
+                <label class="card-title fw-bold">
                     Correo
                     <input type="email" class="form-control"  name="correo"  value="{{old('correo')}}" required>
                 </label>
@@ -63,10 +63,10 @@
                 <div class="alert alert-danger">{{$message}}</div>
             @enderror
             </div>
-            <div class="form-group p-4">
-                <label class="text-primary fw-bold">
+            <div class="form-group p-2">
+                <label class="card-title fw-bold">
                     Asunto
-                    <select name="categoria"  value="{{old('categoria')}}" required id="inputState" class="form-select">
+                    <select name="categoria"  value="{{old('categoria')}}" required id="inputState" class="form-select pe-5 ps-5">
                         <option value="" ></option>
                         <option value="duda">Duda</option>
                         <option value="comentario" >Comentario</option>
@@ -80,16 +80,16 @@
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
             </div>
-            <div class="form-group p-4">
-                <label class="text-primary fw-bold">
+            <div class="form-group p-2">
+                <label class="card-title fw-bold">
                     Mensaje
-                    <textarea name="mensaje" class="form-control" rows="7" required>{{old('mensaje')}}</textarea>
+                    <textarea name="mensaje" class="form-control" rows="9" required>{{old('mensaje')}}</textarea>
                 </label>
                 @error('mensaje')
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary active m-2">Enviar</button>
+            <button type="submit" class="btn btn-primary active m-2 ms-4">Enviar</button>
         </form>
     </div>
     </main>

@@ -21,7 +21,7 @@
         <div class="col-lg-10">
             <div class="p-5">
                          
-                    <h1 class="mt-3 text-primary fw-bold text-center"><img src="{{asset('assets/img/form.png')}}">Formulario de solicitud</h1><br><br>    
+                    <h1 class="mt-3 card-title fs-1 fw-bold text-center"><img src="{{asset('assets/img/form.png')}}">Formulario de solicitud</h1><br><br>    
                     <form id="actualizar"action="/application" method="POST"> <!--ruta que recibe la info y redirecciona, la ruta es la definida en web para el controlador-->
             
                     @csrf

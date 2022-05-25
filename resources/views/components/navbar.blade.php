@@ -39,14 +39,14 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="{{route('contactanos.index')}}">
             <i class="bi bi-envelope"></i>
-            <span>contactanos</span>
+            <span>contáctanos</span>
           </a>
         </li><!-- End contactanos Page Nav -->
   
         <li class="nav-item">
           <a class="nav-link collapsed" href="/register">
             <i class="bi bi-card-list"></i>
-            <span>Registrate</span>
+            <span>Regístrate</span>
           </a>
         </li><!-- End Register Page Nav -->
   
