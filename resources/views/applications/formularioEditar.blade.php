@@ -31,7 +31,7 @@
                     <div class="row mb-3">
                         <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nombre" value="{{isset($application)? $application ->nombre:''}}{{old('nombre')}}" required pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="Ingrese un nombre correcto (solo letras)" class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="nombre" value="{{isset($application)? $application ->nombre:''}}{{old('nombre')}}" required pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{6,100}$" title="Ingrese un nombre correcto (solo letras) y con la extensión requerida (mínimo 6 caracteres, máximo 100)" class="form-control ms-5" id="inputText"><br>
                             @error('nombre')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
@@ -50,7 +50,7 @@
                     <div class="row mb-3">
                         <label for="localidad" class="col-sm-2 col-form-label">Localidad</label>
                         <div class="col-sm-10">
-                            <input type="text" name="localidad" value="{{isset($application)? $application ->localidad :''}}{{old('localidad')}}" required class="form-control ms-5" id="inputText"><br>
+                            <input type="text" name="localidad" value="{{isset($application)? $application ->localidad :''}}{{old('localidad')}}" required pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{5,100}$" title="Ingrese una localidad correcta (solo letras) y con la extensión requerida (mínimo 5 caracteres, máximo 100)" class="form-control ms-5" id="inputText"><br>
                             @error('localidad')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
