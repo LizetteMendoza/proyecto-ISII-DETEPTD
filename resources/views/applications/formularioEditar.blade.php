@@ -16,7 +16,7 @@
     <x-navbar></x-navbar>
     <main class="main" id="main">
     <div class="border border-5 rounded-3  m-4 bg-white" style="width:70%">
-        <div class="col-lg-10">
+        <div class="col-lg-10 me-5">
             <div class="p-5">
                 @isset($application)
                     <h1 class="mt-3 card-title fs-1 text-center fw-bold"><img src="{{asset('assets/img/edit.png')}}">Editar formulario de solicitud</h1><br><br>
