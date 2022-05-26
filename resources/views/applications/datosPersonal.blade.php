@@ -21,6 +21,10 @@
                         <td class="p-3 mb-2 bg-white rounded-end border-bottom">{{$application->nombre}}</td>
                     </tr>
                     <tr>
+                        <th class="p-3 mb-2 bg-light card-title fw-bold">CORREO</th>
+                        <td class="p-3 mb-2 bg-white rounded-end border-bottom">{{$application->user->email}}</td>
+                    </tr>
+                    <tr>
                         <th class="p-3 mb-2 bg-light card-title fw-bold">CURP</th>
                         <td class="p-3 mb-2 bg-white rounded-end border-bottom">{{$application->curp}}</td>
                     </tr>

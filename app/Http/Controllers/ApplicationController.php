@@ -138,7 +138,6 @@ class ApplicationController extends Controller
     {
         $request-> validate([
             'nombre'=>'required',
-            'curp' => 'required|max:18|min:18',
             'direccion' => 'required',
             'localidad' => 'required',
             'imf' => 'required|numeric',
@@ -151,7 +150,7 @@ class ApplicationController extends Controller
             'limitation_id' => 'required'
         ]);
 
-        Application::where('id', $application->id)->update($request->except(['_token', '_method', 'limitation_id']));
+        Application::where('id', $application->id)->update($request->except(['_token', '_method', 'limitation_id', 'curp']));
 
         $application->limitations()->sync($request->limitation_id);
         /*$application->nombre = $request->nombre;

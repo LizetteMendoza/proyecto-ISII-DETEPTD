@@ -19,7 +19,7 @@
         <div class="col-lg-10">
             <div class="p-5">
                 @isset($application)
-                    <h1 class="mt-3 text-primary text-center fw-bold"><img src="{{asset('assets/img/edit.png')}}">Editar formulario de solicitud</h1><br><br>
+                    <h1 class="mt-3 card-title fs-1 text-center fw-bold"><img src="{{asset('assets/img/edit.png')}}">Editar formulario de solicitud</h1><br><br>
                     <form id="actualizar" action="/application/{{$application->id}}" method="POST">
                     @method('PATCH')
                 @else            
@@ -37,15 +37,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="row mb-3">
-                    <label for="curp" class="col-sm-2 col-form-label">CURP</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="curp" value="{{isset($application)? $application ->curp :''}}{{old('curp')}}" required pattern="^[A-Z]{1}[AEIOU]{1}[A-Z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HM]{1}(AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[0-9A-Z]{1}[0-9]{1}$" title="Ingrese un formato de curp correcto" class="form-control ms-5" id="inputText"><br>
-                            @error('curp')
-                                <div class="alert alert-danger">{{$message}}</div>
-                            @enderror
-                        </div>
-                    </div>
+                    
                     <div class="row mb-3">
                         <label for="direccion" class="col-sm-2 col-form-label">Dirección</label>
                         <div class="col-sm-10">
