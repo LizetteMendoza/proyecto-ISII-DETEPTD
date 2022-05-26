@@ -46,24 +46,6 @@
             @csrf
             <div class="form-group p-2">
                 <label class="card-title fw-bold">
-                    Nombre
-                    <input type="text" class="form-control"  name="name"  value="{{old('name')}}" required pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" title="Ingrese un nombre correcto (solo letras)">
-                </label>
-                @error('name')
-                    <div class="alert alert-danger">{{$message}}</div>
-                @enderror
-            </div>
-            <div class="form-group p-2">
-                <label class="card-title fw-bold">
-                    Correo
-                    <input type="email" class="form-control"  name="correo"  value="{{old('correo')}}" required>
-                </label>
-                @error('correo')
-                <div class="alert alert-danger">{{$message}}</div>
-            @enderror
-            </div>
-            <div class="form-group p-2">
-                <label class="card-title fw-bold">
                     Asunto
                     <select name="categoria"  value="{{old('categoria')}}" required id="inputState" class="form-select pe-5 ps-5">
                         <option value="" ></option>

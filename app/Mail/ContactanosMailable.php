@@ -2,10 +2,12 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Auth;
 
 class ContactanosMailable extends Mailable
 {
@@ -33,6 +35,12 @@ class ContactanosMailable extends Mailable
     public function build()
     {
         
-        return $this->view('emails.contactanos');
+        $logueado = Auth::user();
+        if($logueado){
+            return $this->view('emails.contactanosl', compact('logueado'));
+        }
+        else{
+            return $this->view('emails.contactanos');
+        }
     }
 }
