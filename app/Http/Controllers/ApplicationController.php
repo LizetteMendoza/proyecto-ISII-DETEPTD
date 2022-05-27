@@ -60,6 +60,7 @@ class ApplicationController extends Controller
             'nombre'=>'required',
             'curp' => 'required|max:18|min:18',
             'direccion' => 'required',
+            'colonia' => 'required',
             'localidad' => 'required',
             'imf' => 'required|numeric',
             'edad' => 'required|max:3',
@@ -73,6 +74,7 @@ class ApplicationController extends Controller
 
         $request->merge(['user_id'=> Auth::id()]);
 
+       
         $solicitud = Application::create($request->all());
 
         $solicitud->limitations()->attach($request->limitation_id);
@@ -140,6 +142,7 @@ class ApplicationController extends Controller
             'nombre'=>'required',
             'direccion' => 'required',
             'localidad' => 'required',
+            'colonia' => 'required',
             'imf' => 'required|numeric',
             'edad' => 'required|max:3',
             'telefono' => 'required|max:10',

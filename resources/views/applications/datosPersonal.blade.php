@@ -33,6 +33,10 @@
                         <td class="p-3 mb-2 bg-white rounded-end border-bottom">{{$application->direccion}}</td>
                     </tr>
                     <tr>
+                        <th class="p-3 mb-2 bg-light card-title fw-bold">COLONIA</th>
+                        <td class="p-3 mb-2 bg-white rounded-end border-bottom">{{$application->colonia}}</td>
+                    </tr>
+                    <tr>
                         <th class="p-3 mb-2 bg-light card-title fw-bold">LOCALIDAD</th>
                         <td class="p-3 mb-2 bg-white rounded-end border-bottom">{{$application->localidad}}</td>
                     </tr>

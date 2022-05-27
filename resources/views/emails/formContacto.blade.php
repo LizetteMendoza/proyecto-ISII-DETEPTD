@@ -39,7 +39,7 @@
         </button>
       </div>
     
-    <div  class="container p-5 border border-3   border rounded w-75 mt-2">
+    <div  class="container p-5 border border-3   border rounded w-75 mt-2 bg-white bg-opacity-75">
         
         <h1 class=" rounded mt-3 card-title fs-1 fw-bold text-center p-4"> <img src="{{asset('assets/img/contacto1.png')}}" alt=""> Formulario de contacto</h1>
         <form action="{{route('contactanos.store')}}" method="POST">

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('imf');
             $table->smallInteger('edad');
             $table->string('localidad');
+            $table->string('colonia');
             $table->string('telefono',10);
             $table->string('sexo');
             $table->string('escolaridad');
