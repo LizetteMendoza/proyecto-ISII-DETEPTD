@@ -16,7 +16,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Correo') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required pattern="^\S{0,48}[@alumnos.udg.mx]$" title="Ingrese un formato de correo correcto (@alumnos.udg.mx)"/>
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required pattern="^\S+@alumnos.udg.mx" title="Ingrese un formato de correo correcto"/>
             </div>
 
             <div class="mt-4">
